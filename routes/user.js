@@ -1,7 +1,20 @@
 const router = require("express").Router();
+const crypto = require("crypto-js");
+const {verifyToken,verifyTokenAndAuthorization,verifyTokenAndAdmin} = require("./verifyToken.js")
 
-router.get("/getUser/",(req,res)=>{
-    res.send("success!")
+router.put("/:id/",verifyTokenAndAuthorization, async (req,res)=>{
+    if (req.body.password){
+        req.body.password =  crypto.AES.encrypt(req.body.password, process.env.PASS_SEC).toString()
+    }
+
+    try {
+    const updatedUser = await User.FindByIdAndUpdate(req.params.id,
+    {
+        $set : req.body
+    },{new: true}
+)
+res.status(201).json(updatedUser)}
+catch(err){res.status(500).json("Did not update! "+err)}
 })
 
 module.exports = router

@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema(
         password: {type: String, required: true},
         isActive: {type: Boolean, default: false},
         isAdmin: {type: Boolean, default: false},
-        address: {type: Object},
+        address: {type: Object}
     },{timestamps: true}
 );
 
-module.exports = mongoose.Model("User", userSchema);
+module.exports = mongoose.model("User",userSchema);
