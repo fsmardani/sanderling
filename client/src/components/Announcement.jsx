@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Announcement = () => {
   return (
-    <Container>Good news coming!</Container>
+    <Container>به آینه نگاه کن</Container>
   )
 }
 

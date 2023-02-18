@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-    flex 1;
+    flex: 1;
     display: flex;
     align-items: center;
 
@@ -42,7 +42,7 @@ const Input = styled.input `
 `
 
 const Center = styled.div`
-    flex 1;
+    flex: 1;
     text-align: center;
         
 `
@@ -51,7 +51,7 @@ const Logo = styled.h1`
     font-weight: bold;
 `
 const Right = styled.div`
-    flex 1;
+    flex:1;
     text-align: center;
     display: flex;
     justify-content: flex-end;
@@ -79,7 +79,7 @@ const Navbar = () => {
                 </SearchContainer>
             </Left>
             <Center>
-                <Logo>Sanderling</Logo>
+                <Logo>آینه گاه</Logo>
             </Center>
             <Right>
                 <MenuItem>Register</MenuItem>
